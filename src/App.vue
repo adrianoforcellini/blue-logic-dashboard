@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     chart: {
       type: "bar",
       backgroundColor: "none",
+      lineColor:'white'
     },
     colors: ["#ef5b01"],
     title: {
@@ -26,6 +27,87 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
   });
+
+  Highcharts.chart("line-container", {
+    chart: { backgroundColor: "none", style: {color: 'white', fill: 'white'} },
+    title: {
+      text: "Gráfico de Eficiência",
+    },
+
+    subtitle: {
+      align: "left",
+    },
+
+    yAxis: {
+      title: {},
+      type: "linear",
+      categories: ["0", "50", "100", "150", "200"],
+    },
+
+    xAxis: {
+      type: "datetime",
+      categories: [
+        "06:00",
+        "07:00",
+        "08:00",
+        "09:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+      ],
+    },
+
+    legend: {
+      layout: "vertical",
+      align: "right",
+      verticalAlign: "middle",
+    },
+
+    // plotOptions: {
+    //     series: {
+    //         label: {
+    //             connectorAllowed: false
+    //         },
+    //     }
+    // },
+
+    series: [
+      {
+        name: "TCH",
+        data: [110, 149, 153, 154, 100, 148],
+      },
+      {
+        name: "Eficiência Operacional",
+        data: [80, 83, 98, 99, 82, 84],
+      },
+    ],
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 500,
+          },
+          chartOptions: {
+            legend: {
+              layout: "horizontal",
+              align: "center",
+              verticalAlign: "bottom",
+            },
+          },
+        },
+      ],
+    },
+  });
+  let a  = document.getElementsByTagName('text')
+  for ( let i of a ){
+    i.setAttribute('style', 'color:white');
+    i.setAttribute('style', 'fill:white');
+}
 });
 </script>
 
@@ -313,10 +395,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           <div class="bottom">
-            <div
-              class="card"
-              style="border-radius: 50px; margin-top: 15px"
-            ></div>
+            <div class="card" style="border-radius: 50px; margin-top: 15px">
+              <div id="line-container"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -345,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function () {
           />
           <span style="margin-left: 5%">ÁREA TRABALHADA</span>
         </div>
-        <img src="./assets/map.png" style="margin: 3%" />
+        <img src="./assets/map.png" style="margin: 3%; margin-top: 10%" />
         <div style="width: 100%; margin-left: 7vw">
           <span style="margin-left: 1vw">TOTAL:</span>
           <span style="color: #008036">1250 ha</span>
@@ -356,6 +437,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </template>
 
 <style scoped>
+text {
+  color:white
+}
 .right-content {
   width: 30vw;
   padding: 15px;
@@ -410,7 +494,7 @@ document.addEventListener("DOMContentLoaded", function () {
   background-color: rgb(67, 79, 91);
   color: white;
 }
-
+ 
 .card {
   display: flex;
   background-color: rgb(56, 58, 70);
