@@ -1,9 +1,6 @@
 <script setup>
-import { GiFarmTractor } from "oh-vue-icons/icons";
-components: {
-  GiFarmTractor;
-}
 import Tractor from "vue-material-design-icons/Tractor.vue";
+import ClockOutline from "vue-material-design-icons/ClockOutline.vue";
 </script>
 
 <template>
@@ -26,7 +23,28 @@ import Tractor from "vue-material-design-icons/Tractor.vue";
           />
           <h1 style="margin-left: 20%">40</h1>
         </div>
-        <div class="card" style="width: 70%; border-radius: 25px"></div>
+        <div
+          class="card"
+          style="width: 70%; border-radius: 25px; flex-direction: column"
+        >
+          <div
+            class="line-one"
+            style="width: 100%; display: flex; flex-direction: row;margin-top:10px;"
+          >
+            <ClockOutline :size="38" />
+            <div style="width: 20%;margin-left:50px; text-align: center">
+              <span>TEMPO TRABALHANDO</span>
+            </div>
+            <div style="width: 20%;margin-left:50px; text-align: center">
+              <span>TEMPO OMISSO</span>
+            </div>
+            <div style="width: 20%;margin-left:50px; text-align: center">
+              <span>TEMPO OSSIOSO</span>
+            </div>
+          </div>
+          <div class="line-two">bb</div>
+          <div class="line-three">ccc</div>
+        </div>
         <div class="card" style="width: 20%; border-radius: 25px"></div>
       </section>
       <section class="section-bottom">
@@ -48,16 +66,15 @@ import Tractor from "vue-material-design-icons/Tractor.vue";
       </section>
     </div>
     <div class="right-content">
-      <div class="card" style="border-radius:30px"></div>
+      <div class="card" style="border-radius: 30px"></div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
 .right-content {
   width: 30vw;
-  padding:15px
+  padding: 15px;
 }
 
 .left-content {
