@@ -6,7 +6,6 @@ import SpeedometerMedium from "vue-material-design-icons/SpeedometerMedium.vue";
 import GasStation from "vue-material-design-icons/GasStation.vue";
 import Highcharts from "highcharts";
 
-let texts  = document.getElementsByTagName('text')
 document.addEventListener("DOMContentLoaded", function () {
   Highcharts.chart("container", {
     chart: {
@@ -29,16 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   Highcharts.chart("line-container", {
-    chart: { backgroundColor: "none", style: {color: 'white', fill: 'white'} },
+    chart: {
+      backgroundColor: "none",
+      style: { color: "white", fill: "white" },
+    },
     title: {
       text: "Gráfico de Eficiência",
     },
-    colors: ["white", '#008036'],
+    colors: ["white", "#008036"],
 
     subtitle: {
       align: "left",
     },
-    legend:false,
+    legend: false,
 
     yAxis: {
       title: {},
@@ -81,15 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         name: "TCH",
         data: [110, 149, 153, 154, 100, 148],
-        showInLegend: false
-
+        showInLegend: false,
       },
       {
         name: "Eficiência Operacional",
         data: [80, 83, 98, 99, 82, 84],
-        showInLegend: false
+        showInLegend: false,
       },
-
     ],
 
     responsive: {
@@ -109,10 +109,17 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
   });
-  for ( let text of texts ){
-    text.setAttribute('style', 'color:white');
-    text.setAttribute('style', 'fill:white');
-}
+  const texts = document.getElementsByTagName("text");
+  for (let text of texts) {
+    text.setAttribute("style", "color:white");
+    text.setAttribute("style", "fill:white");
+  }
+
+  let spams = Array.from(texts).filter(span => span.innerHTML === 'Highcharts.com')
+  for ( let spam  of spams) {
+    spam.innerHTML=""
+  }
+
 });
 </script>
 
@@ -401,8 +408,48 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
           <div class="bottom">
-            <div class="card" style="border-radius: 50px; margin-top: 15px">
-              <div id="line-container"></div>
+            <div
+              class="card"
+              style="
+                border-radius: 50px;
+                margin-top: 15px;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  background-color: rgb(56, 58, 70);
+                  height: 5%;
+                  width: 35vw;
+                  z-index: 10000;
+                  margin-left: 5%;
+                "
+              >
+                <div style="display: flex; margin-top: 1vw">
+                  <div
+                    style="
+                      background-color: #008036;
+                      width: 1.3vw;
+                      height: 1.3vw;
+                      margin-left: 10%;
+                    "
+                  />
+                  <span style="margin-left:3%">EFICIÊNCIA OPERACIONAL</span>
+                  <div
+                    style="
+                      background-color: white;
+                      width: 1.3vw;
+                      height: 1.3vw;
+                      margin-left: 10%;
+                    "
+                  />
+                  <span style="margin-left:3%">THC</span>
+
+                </div>
+              </div>
+              <div id="line-container" style="width: 100%; height: 90%"></div>
             </div>
           </div>
         </div>
@@ -441,8 +488,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </template>
-methods: {
-},
+methods: { },
 
 <style scoped>
 text {
