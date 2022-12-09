@@ -4,32 +4,28 @@ import ClockOutline from "vue-material-design-icons/ClockOutline.vue";
 import ArrowTopRight from "vue-material-design-icons/ArrowTopRight.vue";
 import SpeedometerMedium from "vue-material-design-icons/SpeedometerMedium.vue";
 import GasStation from "vue-material-design-icons/GasStation.vue";
-import Highcharts from 'highcharts';  
+import Highcharts from "highcharts";
 
-document.addEventListener('DOMContentLoaded', function () {
-    Highcharts.chart('container', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }],
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  Highcharts.chart("container", {
+    chart: {
+      type: "bar",
+      backgroundColor: "none",
+    },
+    colors: ["#ef5b01"],
+    title: {
+      text: "L/t",
+    },
+    xAxis: {
+      categories: ["F1", "F2", "F3"],
+    },
+
+    series: [
+      {
+        data: [63, 65, 80],
+      },
+    ],
+  });
 });
 </script>
 
@@ -180,9 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
                   flex-direction: column;
                 "
               >
-                <span style="font-size: 2vw;margin-top:5px">1000</span>
-                <span style="font-size: 2vw;margin-top:5px">L</span>
-                <span style="font-size: 1.3vw;margin-top:5px">Total</span>
+                <span style="font-size: 2vw; margin-top: 5px">1000</span>
+                <span style="font-size: 2vw; margin-top: 5px">L</span>
+                <span style="font-size: 1.3vw; margin-top: 5px">Total</span>
               </div>
               <div
                 style="
@@ -192,18 +188,91 @@ document.addEventListener('DOMContentLoaded', function () {
                   flex-direction: column;
                 "
               >
-                <span style="font-size: 2vw;margin-top:5px">16,3</span>
-                <span style="font-size: 2vw;margin-top:5px">L/h</span>
-                <span style="font-size: 1.3vw;margin-top:5px">Média</span>
+                <span style="font-size: 2vw; margin-top: 5px">16,3</span>
+                <span style="font-size: 2vw; margin-top: 5px">L/h</span>
+                <span style="font-size: 1.3vw; margin-top: 5px">Média</span>
               </div>
             </div>
-            <div id="container" style="height: 300px"></div>
+            <div
+              id="container"
+              style="height: 40vh; background-color: none"
+            ></div>
+            <div
+              class="orange-two"
+              style="
+                position: absolute;
+                bottom: 1vh;
+                width: 16.5vw;
+                border-radius: 20px;
+                height: 10vh;
+                margin-left: 1vw;
+                display: flex;
+                padding-top: 1vh;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  width: 30%;
+                  text-align: center;
+                  font-size: 1.7vw;
+                  margin-left: 2vw;
+                "
+              >
+                <span>0,89</span>
+                <span>L/t</span>
+              </div>
+              <GasStation :size="48" style="margin-left: 2vw" />
+            </div>
           </div>
         </div>
         <div class="bottom-rigth">
           <div class="top">
-            <div class="card" style="width: 50%; border-radius: 50px"></div>
-            <div class="card" style="width: 50%; border-radius: 50px"></div>
+            <div
+              class="card"
+              style="
+                width: 50%;
+                border-radius: 50px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                alignt-itens: center;
+                font-size: 1.5vw;
+                font-weight: bold;
+              "
+            >
+              <span style="margin-top: 3vh"> RPM </span>
+              <div
+                class="orange-two"
+                style="
+                  margin-top: 3vh;
+                  border-radius: 15px;
+                  width: 90%;
+                  align-self: center;
+                  padding:2%
+                "
+              >
+                <span>MOTOR </span>
+                <span> 1452</span>
+              </div>
+              <div
+                class="orange-two"
+                style="
+                  padding:2%;
+                  margin-top: 3vh;
+                  border-radius: 15px;
+                  width: 90%;
+                  align-self: center;
+                "
+              >
+                <span>EXTRATOR </span>
+                <span> 850</span>
+              </div>
+            </div>
+            <div class="card" style="width: 50%; border-radius: 50px">
+              bbbbb
+            </div>
           </div>
           <div class="bottom">
             <div
