@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   border-radius: 15px;
                   width: 90%;
                   align-self: center;
-                  padding:2%
+                  padding: 2%;
                 "
               >
                 <span>MOTOR </span>
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <div
                 class="orange-two"
                 style="
-                  padding:2%;
+                  padding: 2%;
                   margin-top: 3vh;
                   border-radius: 15px;
                   width: 90%;
@@ -270,8 +270,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span> 850</span>
               </div>
             </div>
-            <div class="card" style="width: 50%; border-radius: 50px">
-              bbbbb
+            <div
+              class="card"
+              style="
+                width: 50%;
+                border-radius: 50px;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                alignt-itens: center;
+                font-size: 1.5vw;
+                font-weight: bold;
+              "
+            >
+              <span style="margin-top: 3vh"> VELOCIDADE </span>
+              <div
+                class="orange-two"
+                style="
+                  margin-top: 3vh;
+                  border-radius: 35px;
+                  width: 80%;
+                  align-self: center;
+                  padding: 2%;
+                "
+              >
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-itens: center;
+                    font-size: 2vw;
+                  "
+                >
+                  <div style="display: flex; flex-direction: column">
+                    <span>5,3 </span>
+                    <span> Km/h</span>
+                  </div>
+                  <SpeedometerMedium :size="56" />
+                </div>
+              </div>
             </div>
           </div>
           <div class="bottom">
@@ -284,7 +322,35 @@ document.addEventListener("DOMContentLoaded", function () {
       </section>
     </div>
     <div class="right-content">
-      <div class="card" style="border-radius: 30px"></div>
+      <div
+        class="card"
+        style="
+          border-radius: 30px;
+          display: flex;
+          flex-direction: column;
+          font-size: 1.5vw;
+          font-weight: bold;
+        "
+      >
+        <div
+          style="border-bottom: 1px solid white; display: flex; margin-top: 3%"
+        >
+          <div
+            style="
+              background-color: #008036;
+              width: 1vw;
+              height: 100%;
+              margin-left: 10%;
+            "
+          />
+          <span style="margin-left: 5%">ÁREA TRABALHADA</span>
+        </div>
+        <img src="./assets/map.png" style="margin: 3%" />
+        <div style="width: 100%; margin-left: 7vw">
+          <span style="margin-left: 1vw">TOTAL:</span>
+          <span style="color: #008036">1250 ha</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
