@@ -1,85 +1,52 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+defineProps({
+  msg: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div class="background">
+    aaaaaa
+    <div class="left-content"></div>
+    <div class="right-content"></div>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.left-content {
+  width: 70vw;
+  height: 100vh;
+  background-color: blue;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.right-content {
+  width: 30vw;
+  height: 100vh;
+  background-color: red;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+.background {
+  display:flex;
+  background-color: rgb(67, 79, 91);
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.cards {
+  background-color: rgb(56, 58, 70);
+  border-radius: 10%;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.cards .orange-one {
+  background-color: rgb(239, 91, 1);
+}
+.cards .orange-two {
+  background-color: rgb(175, 80, 24);
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.cards .orange-three {
+  background-color: rgb(82, 62, 55);
 }
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
