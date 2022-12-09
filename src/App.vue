@@ -6,12 +6,12 @@ import SpeedometerMedium from "vue-material-design-icons/SpeedometerMedium.vue";
 import GasStation from "vue-material-design-icons/GasStation.vue";
 import Highcharts from "highcharts";
 
+let texts  = document.getElementsByTagName('text')
 document.addEventListener("DOMContentLoaded", function () {
   Highcharts.chart("container", {
     chart: {
       type: "bar",
       backgroundColor: "none",
-      lineColor:'white'
     },
     colors: ["#ef5b01"],
     title: {
@@ -33,10 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
     title: {
       text: "Gráfico de Eficiência",
     },
+    colors: ["white", '#008036'],
 
     subtitle: {
       align: "left",
     },
+    legend:false,
 
     yAxis: {
       title: {},
@@ -79,11 +81,15 @@ document.addEventListener("DOMContentLoaded", function () {
       {
         name: "TCH",
         data: [110, 149, 153, 154, 100, 148],
+        showInLegend: false
+
       },
       {
         name: "Eficiência Operacional",
         data: [80, 83, 98, 99, 82, 84],
+        showInLegend: false
       },
+
     ],
 
     responsive: {
@@ -103,10 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
   });
-  let a  = document.getElementsByTagName('text')
-  for ( let i of a ){
-    i.setAttribute('style', 'color:white');
-    i.setAttribute('style', 'fill:white');
+  for ( let text of texts ){
+    text.setAttribute('style', 'color:white');
+    text.setAttribute('style', 'fill:white');
 }
 });
 </script>
@@ -278,6 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div
               id="container"
               style="height: 40vh; background-color: none"
+              onmouseover="transformTheColorsOfTheGraph"
             ></div>
             <div
               class="orange-two"
@@ -435,10 +441,12 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </div>
 </template>
+methods: {
+},
 
 <style scoped>
 text {
-  color:white
+  color: white;
 }
 .right-content {
   width: 30vw;
@@ -494,7 +502,7 @@ text {
   background-color: rgb(67, 79, 91);
   color: white;
 }
- 
+
 .card {
   display: flex;
   background-color: rgb(56, 58, 70);
