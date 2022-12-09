@@ -553,6 +553,7 @@ text {
   display: flex;
   background-color: rgb(56, 58, 70);
   height: 100%;
+  font-family: "Verdana, Arial";
   margin-left: 10px;
   margin-right: 10px;
 }
