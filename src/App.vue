@@ -1,18 +1,26 @@
 <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true,
-  },
-});
+import { GiFarmTractor } from "oh-vue-icons/icons";
+components: {
+  GiFarmTractor;
+}
+import Tractor from "vue-material-design-icons/Tractor.vue";
 </script>
 
 <template>
   <div class="background">
     <div class="left-content">
-      <section class="section-top"></section>
+      <section class="section-top">
+        <div
+          class="cards"
+          style="width: 5%; display: flex; flex-direction: column;padding:5px"
+        >
+          <Tractor style="color: white; margin-left: 10%; margin-top:5%" :size="40" />
+          <h1 style="margin-left:20%">40</h1>
+        </div>
+        <div class="cards" style="width: 70%"></div>
+        <div class="cards" style="width: 20%"></div>
+      </section>
       <section class="section-bottom"></section>
-
     </div>
     <div class="right-content"></div>
   </div>
@@ -22,39 +30,41 @@ defineProps({
 .left-content {
   width: 70vw;
   height: 100vh;
-  background-color: blue;
   flex-direction: column;
 }
 
 .left-content .section-top {
-  width: 90vw;
+  display: flex;
+  width: 100%;
   height: 20vh;
-  margin-top:20px;
-  background-color: yellow;
+  margin-top: 20px;
   flex-direction: row;
 }
 .left-content .section-bottom {
-  width: 90vw;
+  width: 100%vw;
   height: 75vh;
-  margin-top:5vh;
-  background-color: pink;
+  justify-content: space-around;
+  margin-top: 5vh;
   flex-direction: row;
 }
 
 .right-content {
   width: 30vw;
   height: 100vh;
-  background-color: red;
 }
 
 .background {
-  display:flex;
+  display: flex;
   background-color: rgb(67, 79, 91);
+  color:white
 }
 
 .cards {
   background-color: rgb(56, 58, 70);
-  border-radius: 10%;
+  height: 100%;
+  border-radius: 25%;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .cards .orange-one {
@@ -67,5 +77,4 @@ defineProps({
 .cards .orange-three {
   background-color: rgb(82, 62, 55);
 }
-
 </style>
