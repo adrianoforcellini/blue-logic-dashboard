@@ -9,8 +9,11 @@ defineProps({
 
 <template>
   <div class="background">
-    aaaaaa
-    <div class="left-content"></div>
+    <div class="left-content">
+      <section class="section-top"></section>
+      <section class="section-bottom"></section>
+
+    </div>
     <div class="right-content"></div>
   </div>
 </template>
@@ -20,6 +23,22 @@ defineProps({
   width: 70vw;
   height: 100vh;
   background-color: blue;
+  flex-direction: column;
+}
+
+.left-content .section-top {
+  width: 90vw;
+  height: 20vh;
+  margin-top:20px;
+  background-color: yellow;
+  flex-direction: row;
+}
+.left-content .section-bottom {
+  width: 90vw;
+  height: 75vh;
+  margin-top:5vh;
+  background-color: pink;
+  flex-direction: row;
 }
 
 .right-content {
